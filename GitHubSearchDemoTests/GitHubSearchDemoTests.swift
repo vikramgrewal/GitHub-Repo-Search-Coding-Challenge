@@ -30,5 +30,15 @@ class GitHubSearchDemoTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testGitHubUserService()    {
+        GitHubService.getUser(username: "github") { (error, user) -> (Void) in
+            if let error = error {
+                print(error)
+            } else if let user = user {
+                print(user)
+            }
+        }
+    }
 
 }
